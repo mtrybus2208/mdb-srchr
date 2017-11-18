@@ -1,0 +1,97 @@
+/* SERACH RESULTS */
+.search-result-box{
+  position: fixed;
+  top: 50px; 
+  bottom: 0;
+  left:0;
+  right: 0;
+  background-color: #fff;
+  background-image: url('./../../../../assets/img/search-bg.jpg'); 
+  _background-image: none;
+  *background-image: none;
+  overflow-y: auto;
+  z-index: 10;
+}
+.search-result-box__container{
+  margin-top: 1.5rem;
+}
+.search-result-box::-webkit-scrollbar-trac{
+  background-color: rgba(255, 255, 255, .4);
+}
+.search-result-box::-webkit-scrollbar{
+  background-color: rgba(255, 255, 255, .4);    
+  width: 6px;
+}
+.search-result-box::-webkit-scrollbar-thumb{
+  background-color: #1f2831;
+}
+.no-results{
+  background-color: #395067;
+  padding: 1rem;
+  height: 150px;
+}
+.no-results__content{
+  background-image: url('./../../../../assets/img/no-results-bg.jpg');
+  background-size: cover;
+  border: 1px solid #0b1116;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #EEEBEB;
+}
+.no-results__text{
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+/* Media */
+/* 576px sm */
+@media (min-width: 576px) {}
+
+/* 768px md */
+@media (min-width: 768px){
+  .search-result-box::-webkit-scrollbar{
+    background-color: rgba(255, 255, 255, .4);    
+    width: 10px;
+  }
+  .search-box_img-col{
+      min-width: 200px;
+  } 
+  .search-box_input-col{
+      flex: 1;
+  }
+  .search-result-box__container{
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+}
+/* 992px lg */ 
+@media (min-width: 992px) {  
+  .search-result-box{
+    top: 70px;
+  }
+  .search-box_img-col{
+    min-width: 290px;
+    background: #1f2831;
+    border-right: 1px solid #0b1116;
+    cursor: pointer;
+  }
+}
+/* 1200px xl */
+@media (min-width: 1200px) {  
+  .search-result-box__container{
+    margin: 3.5rem 3rem;
+  } 
+} 
+/* target only ms edge/IE to fix background bug */
+@supports (-ms-ime-align: auto) {
+  .search-result-box{
+    background-image: none!important; 
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .search-result-box{
+    background-image: none!important; 
+  }
+}

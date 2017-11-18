@@ -1,0 +1,163 @@
+/* BLOCKS */
+.logg-form{
+    background-color: #ffffff;
+    max-width: 550px;
+    width: 100%;
+    margin: 2rem auto; 
+    -webkit-box-shadow: 13px 10px 22px -8px rgba(0,0,0,0.39);
+    -moz-box-shadow: 13px 10px 22px -8px rgba(0,0,0,0.39);
+    box-shadow: 13px 10px 22px -8px rgba(0,0,0,0.39);  
+}
+/* ELEMENTS */
+.logg-form__top{
+    background-color: #1f2831;
+    color: #fff;
+    display: flex;
+    height: 45px;
+    align-items: center;
+}
+.logg-form__top-icon-box{
+    width: 80px; 
+    background-color: #243648;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.icon-loggin{
+    font-size: 1.45rem;
+}
+.logg-form__name{
+    flex: 1;
+    padding-left:20px; 
+}
+.logg-form__heading{
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin:0;
+}
+.logg-form__body{
+    max-width: 300px; 
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+}
+.logg-form__social-item{
+    background-color: #243648;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+}
+.logg-form__social-icon{
+    width: 25px;
+}
+.logg-form__social-img-box{
+    width: 70px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logg-form__social-name{
+    flex: 1; 
+    padding-left:1rem;
+}
+.logg-form__divider--register{
+    margin-bottom: 0.3rem; 
+} 
+.logg-form__t-bold{
+    font-weight: 500;
+}
+
+.logg-form__anchor,
+.logg-form__anchor:hover{
+    color: #212529;
+}
+.logg-form__input{ 
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+/* MODIFIERS */
+.logg-form__input--submit{
+    margin-top: 1.7rem;
+    margin-bottom: 0.5rem;
+}
+.logg-form__social-item--facebook{
+    background-color: #4160a3;
+}
+.logg-form__social-item--gplus{
+   background-color: #d34836;  
+}
+.logg-form__social-img-box--facebook{
+    background-color:#3b5998; 
+}
+.logg-form__social-img-box--gplus{
+    background-color:#c13c2a; 
+}
+.btn--logging{
+    width: 100%;
+    background-color: #243648;
+    border-radius: 0;
+    color: #fff;
+    cursor: pointer;
+}
+.logg-form_input{
+    border-radius: 0;
+}
+.logg-form__error-info{
+    color: #D41C1C;
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: -8px;
+    width: 100%;
+}
+/**************** ANGULAR VALIDATION CLASSES ***************/
+input.form-control.logg-form_input.ng-invalid.ng-touched{
+    border: 1px solid #D41C1C;
+}
+
+/**************** media ***************/
+/* 576-sm */
+@media (min-width: 576px) {
+    .logg-form__top-icon-box{
+        width: 150px; 
+    }
+}
+/* CONTAINER LOGGING */
+.logg-container{
+    margin-top: 3rem; 
+    margin-bottom: 1rem;
+  } 
+  @media (min-width: 576px) {
+    .logg-container{
+        margin-top:0;
+        margin-bottom:0;
+    } 
+  } 
+  @media (min-width: 768px) { 
+    .logg-container{
+        margin-top:1.5rem;
+    } 
+  }
+  @media (min-width: 992px) { 
+    .logg-container{
+        margin-top:1rem;
+        margin-bottom:1rem;
+    } 
+  }
+  @media (min-width: 1200px) { 
+    .logg-container{
+        margin-top:1.5rem!important;
+        margin-bottom:1rem!important;
+    } 
+  }
+ 
+
+ 
+
+ 
+ 
+ 

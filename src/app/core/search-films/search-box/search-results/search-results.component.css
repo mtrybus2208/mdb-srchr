@@ -1,0 +1,105 @@
+.search-thumb{
+  width: 100%;
+  display: flex; 
+  margin-bottom: 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  box-shadow: 13px 10px 22px -8px rgba(0,0,0,0.39);
+}
+.search-thumb__poster{
+  width: 115px;
+  height: 145px;
+  background-color: #293a4b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-thumb__poster-frame{
+  border: 1px solid #395067;
+  overflow: hidden;
+  height: 115px;
+  width: 85px;
+}
+.search-thumb__poster-img{
+  width: 100%;
+  height: auto;
+}
+.search-thumb__info-tile{
+  color: #fff; 
+}
+.search-thumb__info{
+  display: flex;
+  flex-direction: column;
+  background-color: #395067;
+  flex: 1;
+}
+.search-thumb__info-head{
+  background-color: #31475e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 75px;
+  padding: 5px 10px;
+  border-bottom: 1px solid #1f2831;
+}
+.search-thumb__info-body{
+  background-color: #395067;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 5px 10px;
+  border-top: 1px solid #495f74;
+}
+.icon-rate{
+  font-size: 1.1rem;
+  margin-top: -2px;
+}
+.icon-rate_mini{
+  font-size: 1rem;
+}
+/* modifier */
+.search-thumb__info-tile--date,
+.search-thumb__info-tile--rating{
+  display: none;
+}
+.search-thumb__info-tile--title{
+  font-weight: 500;
+}
+.search-thumb__info-tile--rating{
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+}
+/* MEDIA */
+/* 576px sm */
+@media (min-width: 576px) {
+  .search-thumb__info-tile--date{
+    display: block;
+  }
+  .search-thumb__info-tile--rating{
+    display: flex;
+  }
+  .search-thumb__poster{
+    width: 130px;
+    height: 155px;
+  }
+  .search-thumb__poster-frame{
+    height: 125px;
+    width: 100px;
+  }
+}
+/* 992px lg */
+@media(min-width: 992px){
+  .search-thumb__poster-frame{
+    border: 2px solid #395067;
+  }
+}
+/* 1200px xl */
+@media (min-width: 1200px) {  
+  .search-thumb{
+    max-width: 760px;
+  }
+} 

@@ -1,0 +1,171 @@
+ <div class="details row"> 
+  <div class="details__wrapper col-12 px-xl-5">
+      <ng-container *ngIf="!loading">
+        <div class="row h-100">
+          <div class="col-12">
+              <app-loader></app-loader><!-- !LOADER -->
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="loading">
+        <div class="row details_row">
+        <div class="col-12 col-xl-6">
+          <div class="details__thumbnail">
+            <img src="{{details.backdropPath}}" alt="" class="details__thumbnail-img">
+          </div> <!-- details__thumbnail -->
+        </div> <!-- col-12 col-lg-6 -->
+        <div class="col-12 col-xl-6">
+          <div class="film-info">
+            <div class="film-info__header film-info__header_lead">
+              <span class="film-info__header-item film-info__header-item_title">{{details.title}}</span>
+              <div class="film-info__header-item film-info__header-item_rating">
+                <span>{{details.voteAverage}}</span>
+                <span class="icon-star icon-details pl-2"></span>
+              </div> <!-- film-info__header-item -->
+            </div> <!-- film-info__header -->
+            <div class="film-info__body">
+              <div class="film-info__body__item">
+                <div class="film-info__body-info">
+                  <p class="mb-0">
+                    <span class="icon-cinema icon-details pr-2 d-none d-sm-inline-block"></span>
+                    <span class="film-info_strong">Gatunek:</span> <span>{{details.genres}}</span>
+                  </p>
+                </div> <!-- film-info__body-info -->
+                <div class="film-info__body-info">
+                  <p class="mb-0">
+                      <span class="icon-date icon-details pr-2 d-none d-sm-inline-block"></span>
+                      <span class="film-info_strong">Premiera:</span> <span>{{details.releaseDate}}</span>
+                  </p>
+                </div> <!-- film-info__body-info -->
+                <div class="film-info__body-info">                  
+                  <p class="mb-0" *ngIf="details.originalTitle">
+                    <span class="icon-popular-icon icon-details pr-2 d-none d-sm-inline-block"></span>
+                    <span class="film-info_strong">Tytuł Oryginalny:</span> <span>{{details.originalTitle}}</span>
+                  </p> 
+                </div> <!-- film-info__body-info -->
+              </div>
+              <div class="film-info__body__item">
+                <button class="btn btn_cta" [disabled]="isFavorite == null">
+                  <span class="btn_cta-option" *ngIf="isFavorite == null" >Zaloguj sie by dodać do ulubionych</span>
+                  <span class="btn_cta-option" *ngIf="isFavorite == false" (click)="onAddToFavorites()" style="flex: 1"><span class="icon-plus icon-details pr-2"></span>Dodaj do ulubionych</span>
+                  <span class="btn_cta-option" *ngIf="isFavorite == true" (click)="removeFromFavorites()" style="flex: 1"><span class="icon-delete icon-details pr-2"></span>Usuń z ulubionych</span>
+                </button>
+              </div>
+            </div> <!-- film-info__body -->
+          </div> <!-- film-info -->
+        </div> <!-- col-12 col-lg-6 -->
+      </div><!--row -->
+      <div class="row details_row">
+        <div class="col-12">
+          <div class="film-info film-info_full">
+              <div class="film-info__header film-info__header_description">
+                <div class="film-info__header-item">
+                  <span class="icon-star icon-details pr-2"></span>
+                  <span class="film-info_strong film-info_lead">Opis filmu</span>
+                </div> <!-- film-info__header-item -->
+              </div> <!-- film-info__header -->
+              <div class="film-info__body">
+                <div class="film-info__body__item">
+                  <div class="film-info__body-info">
+                    <p class="film-info_strong" *ngIf="details.tagline">{{details.tagline}}</p>
+                    <p class="text-justify" [innerHtml]="details.overview | hardSpace"></p>
+                  </div> <!-- film-info__body-info -->
+                </div>
+              </div> <!-- film-info__body -->
+            </div> <!-- film-info -->        
+        </div> <!-- col-12 -->
+      </div> <!-- details_row -->
+      <div class="row details_row">
+          <div class="col-12">
+            <div class="film-info film-info_full film-info_cast">
+                <div class="film-info__header film-info__header_description film-info__cast">
+                  <div class="film-info__header-item">
+                    <span class="icon-star icon-details pr-2"></span>
+                    <span class="film-info_strong film-info_lead">Obsada</span>
+                  </div> <!-- film-info__header-item -->
+                </div> <!-- film-info__header -->
+                <div class="film-info__body film-info__body_cast">
+                  <div class="film-info__cast-wrapper">
+                    <div class="film-info__card" *ngFor="let actor of cast">
+                      <div class="film-info__card-top">
+                        <img class="film-info__card-img" src="{{actor.profilePath}}" alt="">
+                      </div>
+                      <div class="film-info__card-body">
+                        <div><span>{{actor.name}}</span></div>
+                        <div><span class="film-info__name">{{actor.character | shorten:25}}</span></div>
+                      </div>
+                    </div> <!-- film-info__card -->
+                  </div>
+                </div> <!-- film-info__body -->
+              </div> <!-- film-info -->        
+          </div> <!-- col-12 -->
+        </div> <!-- details_row -->
+        <div class="row details_row">
+            <div class="col-12">
+              <div class="film-info film-info_full film-info_cast">
+                  <div class="film-info__header film-info__header_description film-info__cast">
+                    <div class="film-info__header-item">
+                      <span class="icon-star icon-details pr-2"></span>
+                      <span class="film-info_strong film-info_lead">Załoga</span>
+                    </div> <!-- film-info__header-item -->
+                  </div> <!-- film-info__header -->
+                  <div class="film-info__body film-info__body_cast">
+                    <div class="film-info__cast-wrapper">
+                      <div class="film-info__card" *ngFor="let worker of crew">
+                        <div class="film-info__card-top">
+                          <img class="film-info__card-img" src="{{worker.profilePath}}" alt="">
+                        </div>
+                        <div class="film-info__card-body">
+                          <div><span>{{worker.name}}</span></div>
+                          <div><span class="film-info__name">{{worker.job | shorten:25}}</span></div>
+                        </div>
+                      </div> <!-- film-info__card -->
+                    </div>
+                  </div> <!-- film-info__body -->
+                </div> <!-- film-info -->        
+            </div> <!-- col-12 -->
+          </div> <!-- details_row -->
+          <div class="row details_row  mb-lg-5">
+              <div class="col-12">
+                <div class="film-info film-info_full">
+                    <div class="film-info__header film-info__header_description">
+                      <div class="film-info__header-item">
+                        <span class="icon-star icon-details pr-2"></span>
+                        <span class="film-info_strong film-info_lead">Fakty</span>
+                      </div> <!-- film-info__header-item -->
+                    </div> <!-- film-info__header -->
+                    <div class="film-info__body">
+                      <div class="film-info__body__item">
+                        <div>
+                          <p *ngIf="details.budget">
+                            <span class="film-info_strong">Budżet: </span>
+                            <span>{{details.budget}} $</span>
+                          </p> 
+                        </div> <!-- film-info__body-info -->
+                        <div *ngIf="details.prodCompanies">
+                          <p *ngIf="details.prodCompanies">
+                            <span class="film-info_strong">Producenci: </span>
+                            <span>{{details.prodCompanies}}</span>
+                          </p> 
+                        </div> <!-- film-info__body-info -->
+                        <div *ngIf="details.prodCountries">
+                          <p *ngIf="details.budget">
+                            <span class="film-info_strong">Kraje: </span>
+                            <span>{{details.prodCountries}}</span>
+                          </p> 
+                        </div> <!-- film-info__body-info -->
+                        <div *ngIf="details.prodCountries">
+                          <p *ngIf="details.homepage">
+                            <span class="film-info_strong">Oficjalna strona: </span>
+                            <span>{{details.homepage}}</span>
+                          </p> 
+                        </div> <!-- film-info__body-info -->
+                      </div>
+                    </div> <!-- film-info__body -->
+                  </div> <!-- film-info -->        
+              </div> <!-- col-12 -->
+            </div> <!-- details_row -->
+    </ng-container>
+  </div>
+</div>
+<div class="row film-pagination_container"></div>

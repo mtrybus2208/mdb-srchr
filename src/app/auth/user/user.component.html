@@ -1,0 +1,99 @@
+<div class="row user-container">
+  <ng-container *ngIf="userInfo != null">
+    <div class="col-12 px-xl-5">
+      <!-- ## user-panel-->
+      <div class="user-panel user-panel_bold row">
+        <div class="col-12 col-md-3 user-panel__box">
+          <div class="profile-item">
+            <img class="profile-item__img__user" src="./assets/img/user-avatar.png" alt="user">
+          </div> <!-- profile-box -->
+        </div> <!-- col-12 -->
+        <div class="col-12 col-md-6 user-panel__box">
+          <div class="user-bio">
+            <div class="user-bio__col">
+              <span class="user-bio__text user-bio__text_category">Użytkownik</span>
+              <span class="user-bio__text" *ngIf="userInfo != null">{{ userInfo.name }}</span>
+            </div> <!-- user-bio__col -->
+            <div class="user-bio__col user-bio__col_top-border">
+              <span class="user-bio__text user-bio__text_category">Email</span>
+              <span class="user-bio__text" *ngIf="userInfo != null">{{ userInfo.email }}</span>
+            </div> <!-- user-bio__col -->
+          </div> <!-- user-bio -->
+        </div> <!-- user-panel__box -->
+        <div class="col-12 col-md-3 user-panel__box">
+          <div class="profile-item profile-item_logout" (click)="onLogout()">
+            <span class="icon-logout icon-loggin px-2"></span>
+            <span class="pt-1">Wyloguj</span>
+          </div> <!-- user-panel__log-button -->
+        </div>
+        <div class="col-12 user-panel__nav user-panel__nav_light">
+          <div class="user-panel__nav-item">
+            <span class="icon-heart icon-loggin icon-loggin_fav px-2"></span>
+            <span class="user-panel__nav-item-text">Ulubione Filmy</span>
+          </div> <!-- user-panel__nav-item -->
+        </div> <!-- ser-panel__nav -->
+      </div> <!-- user-panel -->
+      <!-- ## user-films-wrap-->
+      <div class="user-films-wrap row mb-lg-5">
+        <div class="col-12 user-films-container">
+          <div class="row">
+            <div class="col-12 col-xl-6" *ngFor="let film of objectKeys(userfavoriteFilms)">
+              <div class="user-film">
+                <div class="user-film__content">
+                  <div class="user-film__thumb">
+                    <div class="user-film__thumb-box">
+                      <img src="{{ userfavoriteFilms[film].imgPath }}" alt="" class="user-film__thumb-img">
+                    </div> <!-- user-film__thumb-box -->
+                  </div> <!-- user-film__thumb -->
+                  <div class="user-film__info-box">
+                    <div class="user-film__header">
+                      <div class="user-film__thumb user-film__thumb_mobi">
+                        <div class="user-film__thumb-box">
+                          <img src="{{ userfavoriteFilms[film].imgPath }}" alt="" class="user-film__thumb-img">
+                        </div> <!-- user-film__thumb-box -->
+                      </div> <!-- user-film__thumb -->
+                      <div class="user-film__title-box">
+                        <h3 class="user-film__title">{{ userfavoriteFilms[film].title | shorten:21 }}</h3>
+                        <div class="user-film__date">
+                          <span>{{ userfavoriteFilms[film].date }}</span>
+                          <span class="icon-date icon-loggin icon-loggin_fav px-2"></span>
+                        </div>
+                      </div>
+                    </div> <!-- user-film__header -->
+                    <div class="user-film__body">
+                      <p class="user-film__body-par text-justify" [innerHtml]="userfavoriteFilms[film].desc | shorten:250 | hardSpace" ></p>
+                    </div>
+                  </div> <!-- user-film__info-box -->
+                </div>  <!-- user-film__content -->
+                <div class="user-film__actions">
+                  <div class="user-film__actions-more" [routerLink]="['/details', film]">
+                    <span class="icon-plus icon-loggin icon-loggin_fav pr-2"></span>
+                    <span>Zobacz</span>
+                  </div> <!-- user-film__actions-more -->
+                  <div class="user-film__actions-delete" (click)="onFilmDelete($event,film)">
+                      <span class="icon-delete icon-loggin icon-loggin_fav pr-2"></span>
+                    <span>Usuń</span>
+                  </div> <!-- user-film__actions-delete -->
+                </div> <!-- user-film__actions -->
+              </div> <!-- user-film -->
+            </div> <!-- col-12 -->
+          </div> <!-- row -->
+        </div> <!-- user-films-container -->
+      </div> <!-- user-films-wrap -->
+    </div> <!-- col-12 -->
+  </ng-container>
+  <div class="col-12 px-xl-5" *ngIf="userInfo == null">
+    <app-loader></app-loader> <!-- loader component -->
+  </div>
+</div> <!-- user-container -->   
+
+
+
+
+
+
+
+
+
+
+ 

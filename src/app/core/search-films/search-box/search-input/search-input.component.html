@@ -1,0 +1,32 @@
+<form class="d-flex align-items-center justify-content-center flex-g-1 search-form_box">
+  <div class="d-flex justify-content-center align-items-center form-tile form-tile--search" (click)="onInputClear()">
+      <div class="search-icon">
+        <span class="icon-mg-icon icon-search" *ngIf="!resultDisplay"></span>
+        <span class="icon-delete-w icon-search" *ngIf="resultDisplay"></span>
+      </div>
+  </div>
+  <div class="search-form_input-box flex-g-1">
+      <input value="" type="text" placeholder="Szukaj filmu" class="search-form_input search-form_input--primary pb-sm-0 w-100" #searchInput>
+  </div>
+	<div class="d-flex justify-content-center align-items-center form-tile form-tile--user" (click)="onLogginCheck()">
+        <!-- Show only if user is not logged -->
+        <div class="user-avatar" *ngIf="!isLogged && isLogged != null">
+          <div class="user-avatar__img-box">
+            <img src="./assets/img/not-logged.svg" alt="" class="user-avatar__img user-avatar__img--medium">
+          </div>
+          <div class="user-avatar__name-box">
+            <span class="user-avatar__name user-avatar__name--default">Zaloguj sie</span>
+          </div> <!-- user-avatar__name-box -->
+        </div> <!-- user-avatar -->
+        <!-- Show only if user is logged -->
+        <div class="user-avatar" *ngIf="isLogged && isLogged != null">
+          <div class="user-avatar__img-box">
+            <img src="./assets/img/logged.png" alt="" class="user-avatar__img user-avatar__img--medium">
+          </div>
+          <div class="user-avatar__name-box">
+            <span class="user-avatar__name user-avatar__name--default">{{ name | shorten:12 }}</span>
+          </div> <!-- user-avatar__name-box -->
+        </div> <!-- user-avatar -->
+	</div>
+</form> 
+

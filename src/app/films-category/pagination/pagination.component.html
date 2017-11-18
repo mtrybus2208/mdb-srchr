@@ -1,0 +1,10 @@
+<div class="film-pagination film-pagination--default" *ngIf="showPagination">
+	<div class="film-pagination_arrow" (click)="onPageChange('prev')" [ngClass]="{disabled:currentPage == 1}">
+			<img src="./assets/img/l-arrow.svg" alt="<" class="film-pagination_img">
+	</div>
+	<div class="film-pagination_info"><span>{{currentPage}} / {{totalPages}}</span></div>
+	<div class="film-pagination_arrow "(click)="onPageChange('next')" [ngClass]="{disabled:currentPage == totalPages}">
+			<img src="./assets/img/r-arrow.svg" alt=">" class="film-pagination_img">
+	</div> 
+</div> 
+ 

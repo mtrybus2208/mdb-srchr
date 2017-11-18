@@ -1,0 +1,31 @@
+ 
+<div class="container-fluid">
+  <div class="row search-box" >
+    <div class="col-lg-3 col-xl-2 search-box_img-col d-none d-lg-block" (click)="onHomeNavigate()">
+      <div class="d-flex justify-content-end justify-content-sm-center px-1 align-items-center search-box_container">
+        <a><img src="./assets/img/logo-xs.png" alt="mdb-srchr" class="d-md-none search-box_xs-img"></a>
+        <a><img src="./assets/img/logo-sm.png" alt="mdb-srchr" class="d-none d-md-block search-box_md-img"></a>
+      </div> <!-- search-box_container -->
+    </div> <!-- search-box_img-col -->
+    <div class="col-12 col-lg-9 col-xl-10 px-0 d-flex align-items-center search-box_input-col">
+      <app-search-input class="search-form"></app-search-input>
+      <div class="search-result-box" *ngIf="results.length !=0 || showBanner == true">
+        <div class="container-fluid">
+          <div class="row search-result-box__container">
+            <app-search-results *ngFor="let result of results" [result]="result"></app-search-results>
+              <div class="col-12" *ngIf="results.length == 0">
+                <div class="no-results">
+                  <div class="no-results__content">
+                    <div class="no-results__desc">
+                      <span class="no-results__text">BRAK WYNIKÓW</span>
+                    </div>
+                  </div> <!-- no-results__content -->
+                </div> <!-- no-results -->
+              </div>
+          </div> <!-- search-result-box__container -->
+        </div> <!-- container-fluid -->
+      </div> <!-- search-result-box -->
+     <!-- <p *ngIf="results.length == 0 && showBanner == true">ddddddddddddd</p>   -->
+    </div> <!-- search-box_input-col -->   
+  </div> <!-- search-box -->
+</div> <!-- container-fluid -->

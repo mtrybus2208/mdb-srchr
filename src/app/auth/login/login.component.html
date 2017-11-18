@@ -1,0 +1,56 @@
+<div class="row logg-container film-category_container mx-lg-1 px-lg-3 ">  
+  <div class="col-12" >
+  <app-loader *ngIf="!loading"></app-loader> <!-- loader component -->
+  <div class="logg-form">
+    <div class="logg-form__top">
+      <div class="logg-form__name">
+        <h3 class="logg-form__heading">Logowanie</h3>
+      </div> <!-- logg-form__name -->
+      <div class="logg-form__top-icon-box">
+          <span class="icon-lock icon-loggin"></span>
+      </div> <!-- logg-form__top-icon-bo -->
+    </div> <!-- logg-form__top -->
+      <div class="logg-form__body">
+        <p class="text-center">Zaloguj sie przy pomocy:</p>
+        <!-- Uncomment this for FB login -->
+        <!-- <div class="logg-form__social-item logg-form__social-item--facebook">
+          <div class="logg-form__social-img-box logg-form__social-img-box--facebook">
+            <span class="icon-fb icon-loggin"></span>
+          </div>
+          <div class="logg-form__social-name">
+            <span>Facebook</span>
+          </div>    
+        </div> -->
+        <div class="logg-form__social-item logg-form__social-item--gplus" (click)="onGoogleLogin()">
+          <div class="logg-form__social-img-box logg-form__social-img-box--gplus">
+            <span class="icon-gplus icon-loggin"></span>
+          </div>
+          <div class="logg-form__social-name">
+            <span>Google plus</span>
+          </div>     
+        </div> <!-- logg-form__social-item -->
+        <p class="text-center logg-form__divider">lub</p> 
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+          <div class="logg-form__input">
+            <input type="email" class="form-control logg-form_input" placeholder="Email użytkownika" formControlName="userMail">
+            <div *ngIf="!loginForm.get('userMail').valid && loginForm.get('userMail').touched" class="logg-form__error-info">
+              <span *ngIf="loginForm.get('userMail').errors['required']" class="logg-form__error-info">Pole jest wymagane</span>
+              <span *ngIf="loginForm.get('userMail').errors['email'] && !loginForm.get('userMail').errors['required']" class="logg-form__error-info">Podany e-mail jest nieprawidłowy.</span>
+            </div>
+          </div> <!-- logg-form__input -->
+          <div class="logg-form__input">
+            <input type="text" class="form-control logg-form_input" placeholder="Hasło" formControlName="password">
+            <div *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched" class="logg-form__error-info">
+              <span *ngIf="loginForm.get('password').errors['required']" class="logg-form__error-info">Pole jest wymagane</span>
+              <span *ngIf="loginForm.get('password').errors['minlength']" class="logg-form__error-info">Twoje hasło jest za krótkie</span>
+            </div>
+          </div> <!-- logg-form__input -->
+          <div class="logg-form__input logg-form__input--submit">
+              <button class="btn btn--logging" type="submit" [disabled]="!loginForm.valid">ZALOGUJ SIE</button>
+          </div> <!-- logg-form__input -->
+        </form> 
+        <p class="text-center mb-0"> Nie masz konta? <span class="logg-form__t-bold"><a class="logg-form__anchor" [routerLink]="['/auth/registration']" >Zajerestruj się!</a></span></p> 
+      </div> <!-- logg-form__body -->
+    </div>
+  </div>
+</div> <!-- logg-container -->

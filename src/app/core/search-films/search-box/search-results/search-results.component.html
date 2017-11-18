@@ -1,0 +1,27 @@
+<div class="search-thumb" (click)="onGetDetails()">
+  <div class="search-thumb__poster">
+      <div class="search-thumb__poster-frame">
+        <img class="search-thumb__poster-img" src="{{ result.imgPoster }}">
+      </div> <!-- search-thumb__poster-frame -->
+  </div> <!-- search-thumb__poster -->
+  <div class="search-thumb__info">
+    <div class="search-thumb__info-head">
+      <div class="search-thumb__info-tile search-thumb__info-tile--title">
+        <span>{{ result.title | shorten:30 }}</span>
+      </div>   <!-- search-thumb__info-tile -->
+      <div class="search-thumb__info-tile search-thumb__info-tile--rating">
+        <span>{{ result.ranking }}</span>
+        <span class="icon-star icon-rate ml-2"></span>
+      </div>   <!-- search-thumb__info-tile -->
+    </div> <!-- search-thumb__info-head -->
+    <div class="search-thumb__info-body">
+      <div class="search-thumb__info-tile search-thumb__info-tile--genre">
+        <span>{{ result.genres }}</span>
+      </div>   <!-- search-thumb__info-tile -->
+      <div class="search-thumb__info-tile search-thumb__info-tile--date">
+        <span>{{ result.date }}</span>
+        <span class="icon-date icon-rate icon-rate_mini ml-2"></span>
+      </div>   <!-- search-thumb__info-tile -->
+    </div> <!-- search-thumb__info-body -->
+  </div> <!-- search-thumb__info -->
+</div> <!-- search-thumb -->

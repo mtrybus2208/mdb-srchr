@@ -1,0 +1,24 @@
+<a class="film-thumb" (click)="getDetails()"> 
+  <div class="film-thumb__header">
+    <div class="film-thumb__title"> 
+      <h3 class="film-thumb__heading">{{ currentFilm.title | shorten:60 }}</h3> 
+    </div>
+    <div class="film-thumb__rating">
+      <span>{{ currentFilm.ranking }}</span>
+      <span class="icon-star icon-thumb mx-2"></span>
+    </div> <!-- film-thumb__rating -->
+  </div> <!-- film-thumb__header -->
+  <div class="film-thumb__body">
+    <img src="{{ currentFilm.imgBackDrop }}" alt="currentFilm.title" class="film-thumb__img"  [@onLoadfade]="state" (load)="state='in'">   
+  </div> <!-- film-thumb__body -->
+  <div class="film-thumb__footer">
+    <div class="film-thumb__date">
+      <span class="icon-date icon-thumb pr-2"></span>
+      <span>{{ currentFilm.date }}</span>
+    </div> <!-- film-thumb__date -->
+    <div class="film-thumb__genre">
+      <span class="film-thumb__genre-text">{{ currentFilm.genres }}</span>
+    </div> <!-- film-thumb__genre -->
+  </div>       
+</a> 
+ 

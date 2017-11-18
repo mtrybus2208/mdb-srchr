@@ -1,0 +1,38 @@
+<nav class="d-flex flex-md-column justify-content-start justify-content-sm-center justify-content-lg-start align-items-center">
+  <ul class="category-navigation d-flex flex-lg-column justify-content-center mt-lg-5">
+    <li class="category-navigation_item category-navigation_item--default">
+        <a [routerLink]="['/category', 'popular', 1]" [ngClass]="{'category-navigation_item--active': activeCategory == 'popular'}">
+          <div class="category-navigation_icon-box">
+              <span class="icon-popular-icon icon-navigation d-none d-lg-inline-block"></span>
+          </div>
+          <div class="category-navigation_title"><span>Popularne</span></div>        
+        </a>
+    </li> <!-- li -->
+    <li class="category-navigation_item category-navigation_item--default">
+        <a [routerLink]="['/category', 'top-rated', 1]" [ngClass]="{'category-navigation_item--active': activeCategory == 'top-rated'}">
+          <div class="category-navigation_icon-box">
+              <span class="icon-star icon-navigation d-none d-lg-inline-block"></span>
+          </div>
+          <div class="category-navigation_title"><span>Najlepsze oceny</span></div>        
+        </a>
+    </li> <!-- li -->
+    <li class="category-navigation_item category-navigation_item--default">
+        <a [routerLink]="['/category', 'upcoming', 1]" [ngClass]="{'category-navigation_item--active': activeCategory == 'upcoming'}">
+          <div class="category-navigation_icon-box">
+              <span class="icon-event icon-navigation d-none d-lg-inline-block"></span>
+          </div>
+          <div class="category-navigation_title"><span>Nadchodzące</span></div>        
+        </a>
+    </li> <!-- li -->
+    <li class="category-navigation_item category-navigation_item--default">
+        <a [routerLink]="['/category', 'now-playing', 1]" [ngClass]="{'category-navigation_item--active': activeCategory == 'now-playing'}">
+          <div class="category-navigation_icon-box">
+              <span class="icon-cinema icon-navigation d-none d-lg-inline-block"></span>
+          </div> 
+          <div class="category-navigation_title"><span>W kinach</span></div>        
+        </a>
+    </li> <!-- category-navigation_item --> 
+  </ul> <!-- category-navigation --> 
+</nav> <!-- nav -->
+ 
+ 

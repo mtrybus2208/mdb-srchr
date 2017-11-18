@@ -1,0 +1,218 @@
+.details {
+  padding-top: 5rem; 
+  padding-bottom: 5rem;
+}
+.details__thumbnail {
+  overflow: hidden;
+  border-radius: 2px;
+  margin: 0 auto;
+  max-width: 500px;
+  height: 200px;
+  box-shadow: 13px 10px 22px -8px rgba(0,0,0,0.39);
+  border: 2px solid #33485c;
+}
+.details__thumbnail-img {
+  min-width: 100%;
+  min-height: 100%;
+}
+.film-info__body-info {
+  padding-bottom: .75rem;
+}
+.film-info {
+  background-color: #fff;
+  box-shadow: 13px 10px 22px -8px rgba(0,0,0,0.39);
+  border-radius: 2px;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  color: #2b3744;
+  display: flex;
+  flex-direction: column;
+}
+.film-info__header {
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.film-info__header_lead{
+  font-size: 1.1rem;
+}
+.film-info__body {
+  flex: 1;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.film-info__body_lead {
+  font-size: 1.1rem;
+}
+.icon-details:before {
+  color: #2b3744;
+}
+.btn_cta{
+  cursor: pointer;
+  border-radius: 0;
+  height:50px;
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  align-items:stretch; 
+  margin-top: 1rem;
+  padding:0;
+  box-shadow: 13px 10px 22px -8px rgba(0,0,0,0.39);
+  background-color: #f9bc47;
+  background-image: none; 
+}
+.btn_cta:disabled{
+  background-color: #ccc!important;
+  cursor: not-allowed;
+}
+.btn_cta:hover {
+  background: #FDC461;
+}
+.film-info__header-item_title{
+  font-weight: 500;
+}
+.details::-webkit-scrollbar-trac{
+  background-color: rgba(255, 255, 255, .4);
+}
+.details::-webkit-scrollbar{
+  background-color: rgba(255, 255, 255, .4);    
+  width: 3px;
+}
+.details::-webkit-scrollbar-thumb{
+  background-color: #1f2831;
+}
+.film-info_full{
+  width: 100%;
+}
+.film-info__header-item_rating{
+  min-width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.film-info__header-item_description{
+  justify-content: flex-start;
+}
+.film-info_strong{
+  font-weight: 500;
+}
+.btn_cta-option{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.film-info__name{
+  font-style: italic;
+  font-weight: 100;
+  font-size: 0.95rem;
+}
+.film-info__card-top{
+  height: 185px;
+  overflow: hidden;
+}
+.film-info__card-body{
+  flex: 1;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+}
+.film-info__cast-wrapper{
+  overflow-x: auto;
+	width: 100%; 
+  white-space: nowrap;
+  padding-right: 0.25rem;
+}
+.film-info__card-img{
+  width: 100%;
+  margin-top: -10%;
+  min-height: 100%;
+}
+.film-info__card{
+  background-color: #fff; 
+  min-width: 180px;
+  box-shadow: 13px 10px 22px -8px rgba(0,0,0,0.39);
+  display: inline-block;
+  margin-right: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.film-info__cast-wrapper::-webkit-scrollbar-trac{
+  background-color: rgba(255, 255, 255, .7);
+}
+.film-info__cast-wrapper::-webkit-scrollbar{
+  background-color: rgba(238, 231, 231, 0.7);    
+  width: 3px;
+  height: 10px;
+}
+.film-info__cast-wrapper::-webkit-scrollbar-thumb{
+  background-color: #aaa;
+}
+.film-info_lead{
+  font-size: 1.1rem;
+}
+/* MEDIA */
+/* 576 sm md */
+@media (min-width: 576px) {
+  .film-info__header {
+    padding: 1rem 1.5rem;
+  }
+  .film-info__header_lead{
+    font-size: 1.25rem;
+  }
+  .film-info__body {
+    padding: 1rem 1.5rem;
+  }
+}
+/* 768 md */
+@media (min-width: 768px) {
+  .details__thumbnail{
+    height: 250px;
+  }
+  .film-info {
+    /* height: 100%; */
+  }
+}
+/* >992 lg */ 
+@media (min-width: 992px) { 
+  .details{
+      padding-top: 3rem;
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+  }
+  .details__thumbnail{
+    max-width: 620px;
+  }
+  .film-info{
+    max-width: 620px;
+  }
+  .details::-webkit-scrollbar{
+    background-color: rgba(255, 255, 255, .4);    
+    width: 10px;
+  }
+  .details_row{
+    margin: 0 auto;
+    max-width: 1300px;
+  }
+}
+/* 1200 xl */
+@media (min-width: 1200px) {
+  .details__thumbnail{
+    min-height: 300px;
+  }
+  .film-info {
+    min-height: 300px;
+    margin-top: 0;
+  }
+  .film-info_full{
+    min-width: 100%;
+    margin-top: 1.5rem;
+    min-height: initial;
+  }
+}
