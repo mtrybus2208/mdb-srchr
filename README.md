@@ -20,7 +20,7 @@
 * RxJS
 * Firebase / AngularFire 2
 
-Preview: <a href="mdb-srchr.firebaseapp.com">mdb-srchr.firebaseapp.com</a>
+Preview: <a href="https://mdb-srchr.firebaseapp.com/">mdb-srchr.firebaseapp.com</a>
 
 <img src="https://images83.fotosik.pl/906/ce0c705a1208d89a.jpg">
 
