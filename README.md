@@ -1,7 +1,7 @@
 # MDB-SRCHR ![favicon](https://images82.fotosik.pl/908/c2654ac09ba366d5.png)
 
 ## Single Page Application for searching movies written in Angular / Firebase.
-
+  
 * Project is created from my PSD template - <a href ="https://www.behance.net/gallery/58875611/mdb-srchr">Behence</a>
 * In project I used The Movie Database (TMDb) API
 * Authentication is provided by Firebase 
