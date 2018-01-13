@@ -1,4 +1,4 @@
-# MDB-SRCHR ![favicon](https://images82.fotosik.pl/908/c2654ac09ba366d5.png)
+# MDB-SRCHR 
 
 ## Single Page Application for searching movies written in Angular / Firebase.
   
@@ -22,7 +22,7 @@
 
 Preview: <a href="https://mdb-srchr.firebaseapp.com/">mdb-srchr.firebaseapp.com</a>
 
-<img src="https://images83.fotosik.pl/906/ce0c705a1208d89a.jpg">
+<img src="https://images82.fotosik.pl/963/2894f3582bdbc550.jpg">
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
